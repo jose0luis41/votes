@@ -1,0 +1,64 @@
+.container-parent{
+  position: absolute;
+  bottom: 90px;
+  margin-left: 40px;
+
+  h4{
+    color: white;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+  }
+
+  .container-topic{
+    display: flex;
+    .p-date{
+      color: white;
+      margin-right: 3px;
+      margin-top: 0px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .p-topic{
+      color: white;
+      margin-top: 0px;
+      font-size: 12px;
+    }
+  }
+
+  .p-description{
+    color: white;
+    margin-top: 0;
+  }
+
+  .mat-raised-button{
+    min-width: 42px;
+    padding: 0 6px;
+    margin-right: 10px;
+  }
+
+  .thumb-up{
+    background-color: #1BABA6;
+  }
+
+  .thumb-down{
+    background-color: #F2A828;
+  }
+
+  .mat-icon{
+    color: white;
+  }
+
+  .vote{
+    background: none;
+    color: white;
+    border: 1px solid;
+    font-size: 14px;
+  }
+}
+
+
+
+

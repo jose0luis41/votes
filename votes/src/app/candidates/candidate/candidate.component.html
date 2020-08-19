@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="div-container" [ngStyle]="{background: 'url(../../../assets/' + candidate.url + ')'}">
+    <app-candidate-details (sendVote)="receiveVote($event)"
+                           [candidateThumpDownPressed] = candidate.thumDownPressed
+                           [candidateThumpUpPressed] = candidate.thumUpPressed
+                           [candidateTopic]= candidate.topic
+                           [candidateName]= candidate.name
+                           [candidateLastName]= candidate.lastname>
+
+    </app-candidate-details>
+    <app-percentage [percentageUp] = percentageThumbUp
+                    [percentageDown] = percentageThumbDown>
+
+    </app-percentage>
+  </div>
+</div>
+

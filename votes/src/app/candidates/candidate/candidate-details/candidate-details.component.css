@@ -1,0 +1,42 @@
+.container-parent {
+  position: absolute;
+  bottom: 90px;
+  margin-left: 40px; }
+  .container-parent h4 {
+    color: white;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    letter-spacing: 2px; }
+  .container-parent .container-topic {
+    display: flex; }
+    .container-parent .container-topic .p-date {
+      color: white;
+      margin-right: 3px;
+      margin-top: 0px;
+      font-size: 12px;
+      font-weight: 700; }
+    .container-parent .container-topic .p-topic {
+      color: white;
+      margin-top: 0px;
+      font-size: 12px; }
+  .container-parent .p-description {
+    color: white;
+    margin-top: 0; }
+  .container-parent .mat-raised-button {
+    min-width: 42px;
+    padding: 0 6px;
+    margin-right: 10px; }
+  .container-parent .thumb-up {
+    background-color: #1BABA6; }
+  .container-parent .thumb-down {
+    background-color: #F2A828; }
+  .container-parent .mat-icon {
+    color: white; }
+  .container-parent .vote {
+    background: none;
+    color: white;
+    border: 1px solid;
+    font-size: 14px; }
+
+/*# sourceMappingURL=candidate-details.component.css.map */
