@@ -2,9 +2,7 @@
   height: 50px;
   width: 100%;
   position: absolute;
-  bottom: 0px;
-  background: linear-gradient(to right, #1BABA6 50%, #F2A828 50%);
-  opacity: 0.7; }
+  bottom: 0px; }
 
 .container-percentage {
   display: flex;

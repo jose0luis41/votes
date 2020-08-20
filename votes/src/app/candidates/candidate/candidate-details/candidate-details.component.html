@@ -1,29 +1,35 @@
 <div class="container-parent">
-  <h4>{{candidateName}} {{candidateLastName}}</h4>
-  <div class="container-topic">
-    <p class="p-date">1 month ago </p>
-    <p class="p-topic"> in {{candidateTopic}}</p>
+  <div class="container-result">
+    <mat-icon *ngIf="percentageUp.percentage >= percentageDown.percentage" class="icon-result up" >thumb_up</mat-icon>
+    <mat-icon *ngIf="percentageUp.percentage < percentageDown.percentage" class="icon-result down">thumb_down</mat-icon>
   </div>
-  <p class="p-description">
-    {{description}}
-  </p>
 
-  <button *ngIf="!votePressed" (click)="setButtonStyle($event, true)"
-          [ngStyle]="{'border': candidateThumpUpPressed == true ? '2px solid' : 'none',
+  <div>
+    <h4>{{candidateName}} {{candidateLastName}}</h4>
+    <div class="container-topic">
+      <p class="p-date">1 month ago </p>
+      <p class="p-topic"> in {{candidateTopic}}</p>
+    </div>
+    <p class="p-description">
+      {{description}}
+    </p>
+
+    <button *ngIf="!votePressed" (click)="setButtonStyle($event, true)"
+            [ngStyle]="{'border': candidateThumpUpPressed == true ? '2px solid' : 'none',
           'borderColor': candidateThumpUpPressed == true ? 'white' : 'none'}"
-          class="thumb-up" mat-raised-button>
-    <mat-icon>thumb_up</mat-icon>
-  </button>
+            class="thumb-up" mat-raised-button>
+      <mat-icon>thumb_up</mat-icon>
+    </button>
 
-  <button *ngIf="!votePressed" (click)="setButtonStyle($event, false)"
-          [ngStyle]="{'border': candidateThumpDownPressed == true ? '2px solid' : 'none',
+    <button *ngIf="!votePressed" (click)="setButtonStyle($event, false)"
+            [ngStyle]="{'border': candidateThumpDownPressed == true ? '2px solid' : 'none',
           'borderColor': candidateThumpDownPressed == true ? 'white' : 'none'}"
-          class="thumb-down" mat-raised-button>
-    <mat-icon>thumb_down</mat-icon>
-  </button>
+            class="thumb-down" mat-raised-button>
+      <mat-icon>thumb_down</mat-icon>
+    </button>
 
-  <button *ngIf="!votePressed" (click)="vote($event)" class="vote" mat-raised-button>Vote now</button>
-  <button *ngIf="votePressed" (click)="voteAgain($event)" class="vote" mat-raised-button>Vote again</button>
-
+    <button *ngIf="!votePressed" (click)="vote($event)" class="vote" mat-raised-button>Vote now</button>
+    <button *ngIf="votePressed" (click)="voteAgain($event)" class="vote" mat-raised-button>Vote again</button>
+  </div>
 
 </div>

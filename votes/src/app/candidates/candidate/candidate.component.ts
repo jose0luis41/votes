@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Candidate} from '../../model/candidate';
 
 @Component({
@@ -10,11 +10,13 @@ export class CandidateComponent implements OnInit {
 
   @Input() Candidate: Candidate;
 
+  @Output() candidateUpdated = new EventEmitter<Candidate>();
+
   candidate: Candidate;
   candidateMessage: object;
 
-  percentageThumbUp: number;
-  percentageThumbDown: number;
+  thumbUp: object;
+  thumbDown: object;
 
 
   constructor() { }
@@ -22,12 +24,26 @@ export class CandidateComponent implements OnInit {
   ngOnInit() {
     // @ts-ignore
     this.candidate = this.Candidate;
-    this.percentageThumbUp = 0;
-    this.percentageThumbDown = 0;
-  }
-
-  getUrl() {
-    return this.Candidate;
+    if (this.candidate.totalVotes === 0) {
+      this.thumbUp = {
+        percentage: 50,
+        value: 0
+      };
+      this.thumbDown = {
+        percentage: 50,
+        value: 0
+      };
+    } else {
+      this.thumbUp = {
+        percentage: 0,
+        value: 0
+      };
+      this.thumbDown = {
+        percentage: 0,
+        value: 0
+      };
+      this.calculatePercentage();
+    }
   }
 
   receiveVote($event) {
@@ -41,11 +57,21 @@ export class CandidateComponent implements OnInit {
     this.candidate.thumbUpVotes += this.candidateMessage.candidateThumpUpPressed ? 1 : 0;
     // @ts-ignore
     this.candidate.thumbDownVotes += this.candidateMessage.candidateThumpDownPressed ? 1 : 0;
+
+    this.candidateUpdated.emit(this.candidate);
+    this.calculatePercentage();
   }
 
 
   calculatePercentage() {
-    this.percentageThumbDown = (this.candidate.thumbDownVotes / this.candidate.totalVotes) * 100;
-    this.percentageThumbUp = (this.candidate.thumbUpVotes / this.candidate.totalVotes) * 100;
+    // @ts-ignore
+    this.thumbDown.percentage = Number(((this.candidate.thumbDownVotes / this.candidate.totalVotes) * 100).toFixed());
+    // @ts-ignore
+    this.thumbDown.value = Number(((this.candidate.thumbDownVotes / this.candidate.totalVotes) * 100).toFixed());
+
+    // @ts-ignore
+    this.thumbUp.percentage =  Number(((this.candidate.thumbUpVotes / this.candidate.totalVotes) * 100).toFixed());
+    // @ts-ignore
+    this.thumbUp.value = Number(((this.candidate.thumbUpVotes / this.candidate.totalVotes) * 100).toFixed());
   }
 }

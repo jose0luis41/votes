@@ -23,7 +23,7 @@ import {Candidate} from '../model/candidate';
 
 export class CandidatesComponent implements OnInit {
 
-  public candidates: Array<Candidate> =
+  public candidates: Array<Candidate> = JSON.parse(localStorage.getItem('candidates')) === null ?
     [
       { 'id': '1', 'name': 'Kanye', 'lastname': 'West', 'topic': 'Entertainment', 'totalVotes': 0,
         'thumbUpVotes': 0, 'thumbDownVotes': 0, 'thumUpPressed': false, 'thumDownPressed': false,
@@ -41,11 +41,15 @@ export class CandidatesComponent implements OnInit {
         'thumbUpVotes': 0, 'thumbDownVotes': 0, 'thumUpPressed': false, 'thumDownPressed': false,
         'url': 'malala.png'
       }
-    ];
+    ] : JSON.parse(localStorage.getItem('candidates'));
 
   constructor() { }
 
   ngOnInit() {
+    console.log(JSON.parse(localStorage.getItem('candidates')));
   }
 
+  getCandidateUpdated(event) {
+    localStorage.setItem('candidates', JSON.stringify(this.candidates));
+  }
 }

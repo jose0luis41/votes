@@ -1,14 +1,17 @@
-<div class="div-bar">
+<div class="div-bar" [ngStyle]="{'background': percentageUp.value > percentageDown.value || percentageUp.value === percentageDown.value ?
+'linear-gradient(to right, rgb(27, 171, 166, 0.7) '+ percentageUp.percentage +'%, rgb(242, 168, 40, 0.7) '+percentageDown.percentage+'%)' :
+'linear-gradient(to left, rgb(242, 168, 40, 0.7) '+ percentageDown.percentage +'%, rgb(27, 171, 166, 0.7) '+percentageUp.percentage+'%)'}">
   <div class="container-percentage">
     <div class="percentage-value">
       <mat-icon>thumb_up</mat-icon>
-      <p class="p-thumb-up">{{percentageUp}}%</p>
+      <p class="p-thumb-up">{{percentageUp.value}}%</p>
     </div>
 
     <div class="percentage-value">
       <mat-icon class="mat-down-icon">thumb_down</mat-icon>
-      <p class="p-thumb-down">{{percentageDown}}%</p>
+      <p class="p-thumb-down">{{percentageDown.value}}%</p>
     </div>
   </div>
 
 </div>
+

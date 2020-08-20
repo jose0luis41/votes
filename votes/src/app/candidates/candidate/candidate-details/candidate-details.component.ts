@@ -28,6 +28,8 @@ export class CandidateDetailsComponent implements OnInit {
   @Input() candidateTopic: string;
   @Input() candidateThumpUpPressed: boolean;
   @Input() candidateThumpDownPressed: boolean;
+  @Input() percentageUp: object;
+  @Input() percentageDown: object;
 
   @Output() sendVote = new EventEmitter<object>();
 
@@ -37,6 +39,7 @@ export class CandidateDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log();
     this.votePressed = false;
     this.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   }

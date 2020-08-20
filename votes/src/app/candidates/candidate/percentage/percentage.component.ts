@@ -7,12 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PercentageComponent implements OnInit {
 
-  @Input() percentageUp: number;
-  @Input() percentageDown: number;
+  @Input() percentageUp: object;
+  @Input() percentageDown: object;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.percentageDown, this.percentageUp);
   }
 
 }

@@ -5,11 +5,13 @@
                            [candidateThumpUpPressed] = candidate.thumUpPressed
                            [candidateTopic]= candidate.topic
                            [candidateName]= candidate.name
-                           [candidateLastName]= candidate.lastname>
+                           [candidateLastName]= candidate.lastname
+                           [percentageUp] = thumbUp
+                           [percentageDown] = thumbDown>
 
     </app-candidate-details>
-    <app-percentage [percentageUp] = percentageThumbUp
-                    [percentageDown] = percentageThumbDown>
+    <app-percentage [percentageUp] = thumbUp
+                    [percentageDown] = thumbDown>
 
     </app-percentage>
   </div>
