@@ -10,6 +10,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { CandidateDetailsComponent } from './candidates/candidate/candidate-details/candidate-details.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { BannerComponent } from './banner/banner.component';
+import { HeaderComponent } from './banner/header/header.component';
+import { FooterComponent } from './banner/footer/footer.component';
+import { AdvertasingComponent } from './candidates/advertasing/advertasing.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import {MatButtonModule} from '@angular/material/button';
     CandidateComponent,
     PercentageComponent,
     CandidatesComponent,
-    CandidateDetailsComponent
+    CandidateDetailsComponent,
+    BannerComponent,
+    HeaderComponent,
+    FooterComponent,
+    AdvertasingComponent
   ],
   imports: [
     BrowserModule,

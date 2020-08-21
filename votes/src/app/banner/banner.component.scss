@@ -1,0 +1,15 @@
+div{
+  background-image: url('../../assets/pope.jpg');
+  //background-repeat: repeat-y; /* for vertical repeat */
+  //background-repeat: repeat-x; /* for horizontal repeat */
+  height:650px;
+  width: auto;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  position: relative;
+
+  @media only screen and (max-width: 1000px) {
+    height:350px;
+  }
+}
